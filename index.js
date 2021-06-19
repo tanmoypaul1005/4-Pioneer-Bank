@@ -8,9 +8,15 @@ document.getElementById('login').addEventListener('click', function(){
     document.getElementById('addDeposit').addEventListener('click', function(){
     const depositNumber=getInputNumber("depositAmount");
    
+    if(depositNumber<0){
+      alert("Deposit Number cannot be negative.")
+    }
+    else{
     updateSpanText("currentDeposit",depositNumber);
     updateSpanText("currentBalance",depositNumber);
     document.getElementById('depositAmount').value="";
+    }
+
    })
    
    
